@@ -4,3 +4,35 @@
 :root {
   --primary: #63559A; 
 }
+
+
+
+.theme-defaultTheme {
+  --primary-color: #2563eb;
+  --background-color: #f8fafc;
+}
+.theme-organTransplant {
+  --primary-color: #047857;
+  --background-color: #ecfdf5;
+}
+.theme-cosmeticSurgery {
+  --primary-color: #db2777;
+  --background-color: #fff1f2;
+}
+
+
+/* In your global CSS (e.g., index.css) */
+body.base {
+  background-color: #ffffff;
+  color: #333333;
+}
+
+body.theme1 {
+  background-color: blue;
+  color: white;
+}
+
+body.theme2 {
+  background-color: pink;
+  color: #222222;
+}

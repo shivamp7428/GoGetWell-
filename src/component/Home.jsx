@@ -61,76 +61,7 @@ const Home = () => {
   return (
     <>
    <div className="min-h-screen bg-gradient-to-r from-blue-800 to-gray-800">
-      
-      <div className="flex items-center justify-between p-6">
-        
-       
-        <div className="text-white text-3xl font-bold">
-          <h1>
-            <b>go</b><span className="font-extralight">Get</span><b>Well</b><span className="font-extralight">.ai</span>
-          </h1>
-        </div>
-
-        
-        <div className="md:hidden">
-          <button onClick={() => setIsOpen(!isOpen)} className="text-white text-3xl">
-            {isOpen ? <FaTimes /> : <FaBars />}
-          </button>
-        </div>
-
-        <div className="hidden md:flex  items-center gap-6 text-gray-300">
-           <div className='flex gap-7 mr-100'>
-            <a href="#">About Us</a>
-            <a href="#">F&Q</a>
-            <a href="#">Contact Us</a>
-           </div>
-          <div className="flex gap-4">
-            <div className="bg-white p-2 rounded-md">
-              <button className="font-semibold">Login</button>
-            </div>
-            <div className="bg-[var(--primary)] text-white p-2 rounded-md">
-              <button className="font-semibold">Get Started</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      {isOpen && (
-        <div className="md:hidden bg-gray-400 min-h-screen flex flex-col items-center gap-6 py-6 text-white font-semibold absolute inset-0 z-50">
-         
-          <button
-            onClick={() => setIsOpen(false)}
-            className="absolute top-4 right-4 text-white text-3xl z-60"
-          >
-            <FaTimes />
-          </button>      
-  
-          <div className="flex mt-20 items-center gap-2">
-            <FaInfoCircle size={24} className="text-red-500" />
-            <a href="#">About Us</a>
-          </div>
-          <div className="flex items-center gap-2">
-            <FaQuestionCircle size={24} className="text-red-500" />
-            <a href="#">F&Q</a>
-          </div>
-          <div className="flex items-center gap-2">
-            <FaPhoneAlt size={24} className="text-red-500" />
-            <a href="#">Contact Us</a>
-          </div>
-          
-          
-          <div className="flex flex-col  md:flex-row gap-4 mt-6">
-            <div className="bg-white p-2 text-center text-black rounded-md">
-              <button>Login</button>
-            </div>
-            <div className="bg-[var(--primary)] text-white p-2 rounded-md">
-              <button>Get Started</button>
-            </div>
-          </div>
-        </div>
-      )}
-
-      
-      <div className="mt-16 px-6 md:px-12">
+      <div className=" px-6 pt-15 md:px-12">
         <h1 className="text-3xl md:text-6xl font-bold text-[var(--primary)]">AI Front Office</h1>
         <h1 className="text-3xl md:text-6xl font-bold text-white mt-2">For Healthcare Agents</h1>
         <p className="text-white text-lg md:text-2xl mt-6">
@@ -440,36 +371,6 @@ const Home = () => {
   </div>
 </div>
 
-{/* Footer */}
-
-<footer className="bg-gray-100 p-6">
-  <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-    
-   
-    <p className="text-gray-600 text-sm">
-      © {new Date().getFullYear()} gogetwell.ai
-    </p>
-
-    
-    <div className="flex flex-wrap  gap-4 text-gray-600 text-sm">
-      <p className="hover:underline cursor-pointer">Privacy Policy</p>
-      <p className="hover:underline cursor-pointer">Terms of Service</p>
-      <p className="hover:underline cursor-pointer">Pricing Policy</p>
-      <p className="hover:underline cursor-pointer">Editor Policy</p>
-    </div>
-
-    
-    <div className="flex gap-4">
-      <div className="p-3 rounded-full bg-black text-white hover:scale-110 transition">
-        <BsTwitter size={20} />
-      </div>
-      <div className="p-3 rounded-full bg-black text-white hover:scale-110 transition">
-        <BsLinkedin size={20} />
-      </div>
-    </div>
-
-  </div>
-</footer>
 
     </>
   )
