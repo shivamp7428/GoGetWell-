@@ -1,6 +1,7 @@
+// src/components/Themes.jsx
 import React, { useEffect } from 'react';
-import useThemeStore from '../store/themeStore'; // Custom store
-import themes from '../themes'; // Themes configurations
+import useThemeStore from '../store/themeStore';
+import themes from '../themes';
 
 const themeNames = {
   base: 'Default Theme',
@@ -11,13 +12,11 @@ const themeNames = {
 const Themes = () => {
   const { currentTheme, setTheme } = useThemeStore();
 
-  // Apply theme globally when theme changes
+  // Apply theme styles to body when theme changes
   useEffect(() => {
-    // Dynamically update the body class for the selected theme
     document.body.className = currentTheme;
-    // Apply the body's background color based on the theme
-    if (currentTheme) {
-      const theme = themes[currentTheme];
+    const theme = themes[currentTheme];
+    if (theme) {
       document.body.style.backgroundColor = theme.colors.primary;
     }
   }, [currentTheme]);
@@ -37,7 +36,7 @@ const Themes = () => {
               borderWidth: currentTheme === key ? '2px' : '1px',
             }}
           >
-            <h2 className={theme.typography.heading} >
+            <h2 className={theme.typography.heading}>
               {themeNames[key]}
             </h2>
             <p className={theme.typography.body}>
@@ -48,7 +47,7 @@ const Themes = () => {
               className="mt-4 px-4 py-2 rounded border text-white transition-all"
               style={{
                 backgroundColor: currentTheme === key ? theme.colors.primary : theme.colors.secondary,
-                color: theme.colors.text, // Update text color based on theme
+                color: theme.colors.text,
                 opacity: currentTheme === key ? 1 : 0.8,
               }}
             >
