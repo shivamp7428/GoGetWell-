@@ -44,6 +44,7 @@ const Navbar = () => {
       style={{ backgroundColor: theme.colors.primary, color: theme.colors.text }}
       
     >
+      
       <div className="flex items-center md:hidden justify-between px-6 py-4 ">
        
        <div className="text-white text-3xl font-bold">
@@ -51,6 +52,16 @@ const Navbar = () => {
            <b>go</b><span className="font-extralight">Get</span><b>Well</b><span className="font-extralight">.ai</span>
          </h1>
        </div>
+       <button
+      onClick={handleThemeSwitch}
+      className="mt-4 w-10 h-10 md:hidden rounded-full border text-xl flex items-center justify-center shadow-md"
+      style={{
+        backgroundColor: theme.colors.secondary,
+        color: theme.colors.text,
+      }}
+    >
+      🎨
+    </button>
 
       
        <div className="md:hidden">
@@ -100,35 +111,43 @@ const Navbar = () => {
       </div>
  </div>
 
-      {isOpen && (
-        <div className="md:hidden bg-gray-800 min-h-screen flex flex-col items-center gap-6 py-6 text-white font-semibold absolute inset-0 z-40">
-          <button onClick={() => setIsOpen(false)} className="absolute top-4 right-4 text-white text-3xl">
-            <FaTimes />
-          </button>
+    {/* 🎯 Outside Menu Button - Centered Round Button */}
+    
+{/* Mobile Menu */}
+{isOpen && (
+  <div className="md:hidden bg-gray-800 min-h-screen flex flex-col items-center gap-6 py-6 text-white font-semibold absolute inset-0 z-40">
+    <button
+      onClick={() => setIsOpen(false)}
+      className="absolute top-4 right-4 text-white text-3xl"
+    >
+      <FaTimes />
+    </button>
 
-          <div className="flex mt-20 items-center gap-2">
-            <FaInfoCircle size={24} className="text-red-500" />
-            <a href="/">About</a>
+    <div className="flex mt-20 items-center gap-2">
+      <FaInfoCircle size={24} className="text-red-500" />
+      <a href="/">About</a>
+    </div>
+    <div className="flex items-center gap-2">
+      <FaQuestionCircle size={24} className="text-red-500" />
+      <a href="/">F&Q</a>
+    </div>
+    <div className="flex items-center gap-2">
+      <FaPhoneAlt size={24} className="text-red-500" />
+      <a href="/">Contact</a>
+    </div>
+    <div >
+          <div className="rounded-md border flex justify-center bg-white text-black p-2">
+            <button>Login</button>
           </div>
-          <div className="flex items-center gap-2">
-            <FaQuestionCircle size={24} className="text-red-500" />
-            <a href="/">F&Q</a>
+          <div className="rounded-md mt-3 border bg-[var(--primary)] flex items-center p-2">
+            <button>Get Started</button>
           </div>
-          <div className="flex items-center gap-2">
-            <FaPhoneAlt size={24} className="text-red-500" />
-            <a href="/">Contact</a>
-          </div>
+      </div>
+    {/* 🎨 Theme Button inside menu (optional) */}
+   
+  </div>
+)}
 
-          {/* 🎨 Theme Button */}
-          <button
-            onClick={handleThemeSwitch}
-            className="mt-4 w-10 h-10 rounded-full border text-xl flex items-center justify-center shadow-md"
-            style={{ backgroundColor: theme.colors.secondary, color: theme.colors.text }}
-          >
-            🎨
-          </button>
-        </div>
-      )}
     </div>
   );
 };
